@@ -17,9 +17,13 @@ class userModel
         $this->connection = database::getConnection();
     }
 
-    public function registerUser() {
-        //INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('Test', 'Test', 'test', 'test', 'test', 'test');
+    public function registerUser(string $username, string $password, string $surname, string $name, string $mail, string $phone) {
+        $hashedpassword = password_hash($password, PASSWORD_BCRYPT);
 
+
+        $sql = "INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('$name', '$surname', '$username', '$mail', '$phone', '$hashedpassword')";
+        $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
+        $stmt->execute();
     }
 
     public function getUserByUsername() {
