@@ -8,10 +8,17 @@
  */
 class database
 {
-    public function getDbConnection(){
+    private static $instance;
+    private $conn;
+
+    /**
+     * Database constructor.
+     */
+    private function __construct()
+    {
         try
         {
-            $pdo = new PDO('mysql:host=localhost;dbname=inserator', 'root', '');
+            $this->conn = new PDO('mysql:host=localhost;dbname=inserator', 'root', '');
 
         }
         catch (PDOException $e)
@@ -19,6 +26,18 @@ class database
             echo 'Error: ' . $e->getMessage();
             exit();
         }
-        echo 'Connected to MySQL';
+    }
+
+    public static function getConnection()
+    {
+        return self::getInstance()->conn;
+    }
+
+    public static function getInstance()
+    {
+        if (!self::$instance) { // If no instance then create one
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 }

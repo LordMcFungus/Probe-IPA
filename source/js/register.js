@@ -30,14 +30,15 @@ function register() {
 
     var dataString = 'Username='+username+'&Name='+name+'&Surname='+surname+'&Mail='+mail+'&Phone'+phone+'&Password='+password+'&RepPassword='+repPassword;
 
+    alert(dataString);
 
     $.ajax({
-        type: "POST",
-        url: "input/RegisterInput.php",
+        type: "GET",
+        url: "input/registerInput.php",
         data: dataString,
         cache: false,
         success: function(data){
-            fadeToHome();
+            alert(data);
         },
         error: function (request, status, error) {
             //Shake animation effect.

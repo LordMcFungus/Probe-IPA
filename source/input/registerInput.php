@@ -6,6 +6,8 @@
  * Time: 09:43
  */
 
+require_once "../controller/registerController.php";
+
 $username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
 $name = filter_input(INPUT_POST, 'Name', FILTER_SANITIZE_STRING) ?? "";
 $surname = filter_input(INPUT_POST, 'Surname', FILTER_SANITIZE_STRING) ?? "";
