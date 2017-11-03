@@ -10,7 +10,7 @@ $username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
 $name = filter_input(INPUT_POST, 'Name', FILTER_SANITIZE_STRING) ?? "";
 $surname = filter_input(INPUT_POST, 'Surname', FILTER_SANITIZE_STRING) ?? "";
 $mail = filter_input(INPUT_POST, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";
-$phone = filter_input(INPUT_POST, 'Mail', FILTER_SANITIZE_STRING) ?? "";
+$phone = filter_input(INPUT_POST, 'Phone', FILTER_SANITIZE_STRING) ?? "";
 $password = filter_input(INPUT_POST, 'Password') ?? "";
 $repeatPassword = filter_input(INPUT_POST, 'RepPassword') ?? "";
 
