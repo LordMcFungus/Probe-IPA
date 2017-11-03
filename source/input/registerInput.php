@@ -8,13 +8,14 @@
 
 require_once "../controller/registerController.php";
 
-$username = filter_input(INPUT_POST, 'Username', FILTER_SANITIZE_STRING) ?? "";
-$name = filter_input(INPUT_POST, 'Name', FILTER_SANITIZE_STRING) ?? "";
-$surname = filter_input(INPUT_POST, 'Surname', FILTER_SANITIZE_STRING) ?? "";
-$mail = filter_input(INPUT_POST, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";
-$phone = filter_input(INPUT_POST, 'Phone', FILTER_SANITIZE_STRING) ?? "";
-$password = filter_input(INPUT_POST, 'Password') ?? "";
-$repeatPassword = filter_input(INPUT_POST, 'RepPassword') ?? "";
+$username = filter_input(INPUT_GET, 'Username', FILTER_SANITIZE_STRING) ?? "";
+$name = filter_input(INPUT_GET, 'Name', FILTER_SANITIZE_STRING) ?? "";
+$surname = filter_input(INPUT_GET, 'Surname', FILTER_SANITIZE_STRING) ?? "";
+$mail = filter_input(INPUT_GET, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";
+$phone = filter_input(INPUT_GET, 'Phone', FILTER_SANITIZE_STRING) ?? "";
+$password = filter_input(INPUT_GET, 'Password') ?? "";
+$repeatPassword = filter_input(INPUT_GET, 'RepPassword') ?? "";
+
 
 $controller = new registerController();
 

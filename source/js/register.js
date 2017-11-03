@@ -28,7 +28,7 @@ function register() {
     var password=$("#RegisterPassword").val();
     var repPassword=$("#RepPassword").val();
 
-    var dataString = 'Username='+username+'&Name='+name+'&Surname='+surname+'&Mail='+mail+'&Phone'+phone+'&Password='+password+'&RepPassword='+repPassword;
+    var dataString = 'Username='+username+'&Name='+name+'&Surname='+surname+'&Mail='+mail+'&Phone='+phone+'&Password='+password+'&RepPassword='+repPassword;
 
     alert(dataString);
 

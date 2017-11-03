@@ -24,6 +24,8 @@ class userModel
         $sql = "INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('$name', '$surname', '$username', '$mail', '$phone', '$hashedpassword')";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
+
+        echo "$sql";
     }
 
     public function getUserByUsername() {
