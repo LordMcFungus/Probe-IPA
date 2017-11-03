@@ -10,20 +10,18 @@
     <script src="js/main.js"></script>
     <script src="js/register.js"></script>
     <script src="js/load.js"></script>
+    <script src="js/Jquery3.2.1.js"></script>
 </head>
 <body onload="loadContent()">
     <header>
-        <div>
-           <a onclick="showLogin()" >Login</a>
-           <a onclick="showRegister()" >Registrieren</a>
+        <div id="headerButtonContainer">
+           <a onclick="showLogin()" class="headerButton" id="loginButton">Login</a>
+           <a onclick="showRegister()" class="headerButton" id="registerButton">Registrieren</a>
         </div>
-        <div></div>
+        <div class="floatClear"></div>
     </header>
 
-    <main>
-        <div>
-
-        </div>
+    <main id="mainContent">
 
     </main>
 </body>

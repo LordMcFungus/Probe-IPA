@@ -6,8 +6,8 @@
  * Time: 09:31
  */
 
-?>
-<div id="LoginContent" onclick="hideLogin()">
+
+echo '<div id="LoginContent" onclick="hideLogin()">
     <h1 id="RegisterTitle">Registrieren</h1>
 
     <form onsubmit="register(); return false;" id="registerform">
@@ -40,4 +40,4 @@
         <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
 
     </form>
-</div>
+</div>';
