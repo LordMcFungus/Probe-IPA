@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Alain
+ * Date: 03.11.2017
+ * Time: 08:48
+ */
+class userModel
+{
+
+}
