@@ -17,7 +17,7 @@ class validator
 
         $usernameValid = strlen($username) < 40 && strlen($username) > 1;
 
-        $usernameUnique = !$model->isUserExisting($username);
+        $usernameUnique = $model->isUserNotExisting($username);
 
         $passwordValid = true; //$password == $repeatPassword && preg_match($passwordRegularExpression, $password);
 
@@ -27,12 +27,13 @@ class validator
 
         $mailValid = filter_var($mail, FILTER_VALIDATE_EMAIL);
 
-        $phoneValid = strlen($phone) < 20 && strlen($surname) > 10;
+        $phoneValid = strlen($phone) <= 20 && strlen($phone) >= 10;
 
         $validationResults = array('Benutzername' => $usernameValid, 'Username2' =>$usernameUnique, 'Password' => $passwordValid, 'Surname' => $surnameValid, 'Name' => $nameValid, 'Email' => $mailValid != "", "Phone" => $phoneValid);
 
         foreach ($validationResults as $key => $value) {
             if(!$value) {
+                echo $key;
                 return false;
             }
         }

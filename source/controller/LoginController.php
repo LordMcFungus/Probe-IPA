@@ -8,5 +8,7 @@
  */
 class LoginController
 {
-
+    private function checkPassword(){
+        //password_verify ( string $password , string $hash )
+    }
 }

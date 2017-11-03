@@ -32,7 +32,7 @@ class userModel
 
     }
 
-    public function isUserExisting(string $username) {
+    public function isUserNotExisting(string $username) {
         $sql 	= "SELECT id FROM user WHERE username ='$username'";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
