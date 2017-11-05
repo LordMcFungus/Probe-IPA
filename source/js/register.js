@@ -38,7 +38,13 @@ function register() {
         data: dataString,
         cache: false,
         success: function(data){
-            alert(data);
+          alert(data);
+
+            loadRegisteredPage();
+
+            if(data == "Success"){
+                loadRegisteredPage();
+            }
         },
         error: function (request, status, error) {
             //Shake animation effect.

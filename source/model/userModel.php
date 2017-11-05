@@ -7,25 +7,41 @@
  * Time: 08:48
  */
 require_once "database.php";
+require_once "user.php";
+require_once "../controller/mySession.php";
 
 class userModel
 {
     private $connection;
+    private $mySession ;
 
     public function __construct()
     {
         $this->connection = database::getConnection();
+        $this->mySession = mySession::getInstance();
     }
 
     public function registerUser(string $username, string $password, string $surname, string $name, string $mail, string $phone) {
         $hashedpassword = password_hash($password, PASSWORD_BCRYPT);
 
+        try
+        {
+            $sql = "INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('$surname', '$name', '$username', '$mail', '$phone', '$hashedpassword')";
+            $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
+            $stmt->execute();
+        } catch (mysqli_sql_exception $e) {
+            echo "ERROR";
+            return false;
+        }
 
-        $sql = "INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('$name', '$surname', '$username', '$mail', '$phone', '$hashedpassword')";
-        $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
-        $stmt->execute();
+        //$user = new user($name, $surname, $username, $mail, $phone);
 
-        echo "$sql";
+        $user = $username;
+
+        $this->mySession->setCurrentUser($user);
+
+
+        return true;
     }
 
     public function getUserByUsername() {

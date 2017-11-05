@@ -1,3 +1,7 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +18,13 @@
 </head>
 <body onload="loadContent()">
     <header>
-        <div id="headerButtonContainer">
-           <a onclick="showLogin()" class="headerButton" id="loginButton">Login</a>
-           <a onclick="showRegister()" class="headerButton" id="registerButton">Registrieren</a>
+        <div id="headerContent">
+            <div id="headerButtonContainer">
+                <a onclick="showLogin()" class="headerButton" id="loginButton">Login</a>
+                <a onclick="showRegister()" class="headerButton" id="registerButton">Registrieren</a>
+            </div>
+            <div class="floatClear"></div>
         </div>
-        <div class="floatClear"></div>
     </header>
 
     <main id="mainContent">

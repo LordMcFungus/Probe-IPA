@@ -31,7 +31,10 @@ class registerController
             return;
         }
 
-        $this->model->registerUser($username, $password, $surname, $name, $mail, $phone);
+        if($this->model->registerUser($username, $password, $surname, $name, $mail, $phone)) {
+            //echo $_SESSION['user'];
+            //  echo 'Success';
+        }
 
 
     }
