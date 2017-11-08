@@ -20,7 +20,7 @@ class LoginController
         $user = $this->model->loadUserByUsername($username);
 
         if($user) {
-            $passwordCorrect = password_verify($password, $user['password']);
+            $passwordCorrect = password_verify($password, $user['pwd']);
 
             if ($passwordCorrect) {
 
@@ -33,11 +33,6 @@ class LoginController
         //Code wrong
         $this->loginError();
         return;
-    }
-
-
-    private function checkPassword(){
-        //password_verify ( string $password , string $hash )
     }
 
     public function __construct()

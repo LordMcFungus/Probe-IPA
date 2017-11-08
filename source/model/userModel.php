@@ -50,7 +50,7 @@ class userModel
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
 
-        if ( $stmt->columnCount() >=1)
+        if ( $stmt->rowCount() >=1)
         {
             return true;
         }
@@ -61,14 +61,15 @@ class userModel
 
     public function loadUserByUsername($username)
     {
-        $sql 	= "SELECT id FROM user WHERE username ='$username'";
+        $sql 	= "SELECT * FROM user WHERE username ='$username'";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
 
-        if ($stmt->rowCount() > 0) {
+        if ($stmt->rowCount() < 0) {
+           echo 'Gaggi';
             return null;
         } else {
-            return $stmt;
+            return $stmt->fetch();
         }
 
 

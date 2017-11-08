@@ -20,7 +20,7 @@ if($user) {
         </div>
         <div id=\"headerButtonContainer\">
            <a onclick=\"showMyInserate()\" class=\"headerButton\" id=\"myInserateButton\">Meine Inserate</a>
-           <a onclick=\"makeInserat()\" class=\"headerButton\" id=\"makeInseratButton\">Inserat erfassen</a>
+           <a onclick=\"openInseratForm()\" class=\"headerButton\" id=\"makeInseratButton\">Inserat erfassen</a>
            <a onclick=\"logout()\" class=\"headerButton\" id=\"logoutButton\">Logout</a>
         </div>
         <div class=\"floatClear\"></div>'";
