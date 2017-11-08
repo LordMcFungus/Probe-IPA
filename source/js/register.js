@@ -39,6 +39,7 @@ function register() {
 
             if(data == "Success"){
                 loadContent();
+
             }
             alert(data);
         },

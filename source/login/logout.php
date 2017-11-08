@@ -11,3 +11,5 @@ require_once 'LoginController.php';
 $loginController = new LoginController();
 
 $loginController->logout();
+
+require_once '../view/allInserateView.php';

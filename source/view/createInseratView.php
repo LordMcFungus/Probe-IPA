@@ -33,7 +33,7 @@ echo '<div id="LoginContent">
 
 
         <input type="reset" name="Abbrechen" class="RegisterButton" id="Reset" value="Abbrechen">
-        <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
+        <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Inserat erstellen">
 
     </form>
 </div>';

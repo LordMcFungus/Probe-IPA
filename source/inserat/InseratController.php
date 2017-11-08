@@ -30,4 +30,13 @@ class InseratController
             $this->model->insertInserat($title, $description, $mail, $phone, $place, $type);
         }
     }
+
+    public function showInserate($page)
+    {
+        $page = $page * 10 - 10;
+        $inserate = $this->model->loadInserate($page);
+        return $inserate;
+    }
+
+
 }

@@ -18,7 +18,7 @@ class inseratModel
 
     public function __construct()
     {
-        $this->connection = database::getInstance();
+        $this->connection = database::getConnection();
     }
 
     public function insertInserat($title, $description, $mail, $phone, $place, $type)
@@ -41,5 +41,45 @@ class inseratModel
             echo "ERROR";
             return false;
         }
+    }
+
+    public function loadInserate($start)
+    {
+        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.id FROM inserat ORDER BY inserat.date LIMIT 0,10";
+        $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
+        $stmt->execute();
+
+
+        $echobolo = "";
+
+        while ($row = $stmt->fetch())
+        {
+            $name = $row['name'];
+            $type = $row['type'];
+            $location = $row['location'];
+            $id = $row['id'];
+
+            $echobolo = $echobolo."<div>
+                               <a href='inserat/inserat.php?id=$id'>
+                               <p>$name</p>
+                               <p>$type</p>
+                               <p>$location</p></a>
+                          </div>";
+        }
+
+        return $echobolo;
+
+
+
+    }
+
+    public function loadInserateById($id)
+    {
+        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.description, inserat.email, inserat.phone FROM inserat where inserat.id = '$id'";
+        $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
+        $stmt->execute();
+
+        return $stmt->fetch();
+
     }
 }

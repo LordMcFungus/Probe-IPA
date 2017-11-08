@@ -16,4 +16,6 @@ function loadContent(){
 
         }
     });
+
+    loadInserate();
 }

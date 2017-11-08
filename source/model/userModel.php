@@ -68,7 +68,7 @@ class userModel
         $stmt->execute();
 
         if ($stmt->rowCount() <= 0) {
-           echo 'Gaggi';
+           echo 'Error';
             return null;
         } else {
             return $stmt->fetch();
