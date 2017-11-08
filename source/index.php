@@ -9,7 +9,7 @@
     <title>Inserator</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/header.js"></script>
-    <script src="js/inserat.js"></script>
+    <script src="inserat/inserat.js"></script>
     <script src="js/login.js"></script>
     <script src="js/main.js"></script>
     <script src="js/register.js"></script>

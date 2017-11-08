@@ -10,16 +10,13 @@ echo '<div id="LoginContent">
     <h1 id="RegisterTitle">Inserat Erfassen</h1>
 
     <form onsubmit="createInserat(); return false;" id="inseratForm">
-        <label for="RegisterUsername" class="RegisterLabel">Titel</label> <br />
-        <input type="text" id="RegisterUsername" name="RegisterUsername" class="RegisterInput" required="required"> <br />
+        <label for="Title" class="RegisterLabel">Titel</label> <br />
+        <input type="text" id="Title" name="Title" class="RegisterInput" required="required"> <br />
 
-        <label for="Name" class="RegisterLabel">Beschreibung</label> <br />
+        <label for="Description" class="RegisterLabel">Beschreibung</label> <br />
 
-        <textarea rows="4" cols="50" id="Name" name="Name" maxlength="500">
+        <textarea rows="4" cols="50" id="Description" name="Description" maxlength="500">
         </textarea><br />
-
-        <label for="Surname" class="RegisterLabel">Vorname</label> <br />
-        <input type="text" id="Surname" name="Surname" class="RegisterInput" > <br />
 
         <label for="Mail" class="RegisterLabel">E-Mail</label> <br />
         <input type="email" id="Mail" name="Mail" class="RegisterInput"> <br />
@@ -27,11 +24,11 @@ echo '<div id="LoginContent">
         <label for="Phone" class="RegisterLabel">Telefon</label> <br />
         <input type="tel" id="Phone" name="Phone" class="RegisterInput"> <br />
 
-        <label for="Ort" class="RegisterLabel">Ort</label> <br />
-        <input type="text" id="Ort" name="Ort" class="RegisterInput"> <br />
+        <label for="Place" class="RegisterLabel">Ort</label> <br />
+        <input type="text" id="Place" name="Place" class="RegisterInput"> <br />
 
-        <label for="Art" class="RegisterLabel">Art des Angebotes</label> <br />
-        <input type="text" id="Art" name="Art" class="RegisterInput"> <br />
+        <label for="Type" class="RegisterLabel">Art des Angebotes</label> <br />
+        <input type="text" id="Type" name="Type" class="RegisterInput"> <br />
 
 
 

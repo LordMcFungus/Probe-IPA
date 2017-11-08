@@ -29,7 +29,7 @@ class validator
 
         $phoneValid = strlen($phone) <= 20 && strlen($phone) >= 10;
 
-        $validationResults = array('Benutzername' => $usernameValid, 'Username2' =>$usernameUnique, 'Password' => $passwordValid, 'Surname' => $surnameValid, 'Name' => $nameValid, 'Email' => $mailValid != "", "Phone" => $phoneValid);
+        $validationResults = array('Username' => $usernameValid, 'Username2' =>$usernameUnique, 'Password' => $passwordValid, 'Surname' => $surnameValid, 'Name' => $nameValid, 'Email' => $mailValid != "", "Phone" => $phoneValid);
 
         foreach ($validationResults as $key => $value) {
             if(!$value) {
@@ -38,5 +38,22 @@ class validator
             }
         }
         return true;
+    }
+
+    public function inseratInputValid(string $title, string $description, string $mail, string $phone, string $place, string $type)
+    {
+        $titleValid = strlen($title) < 50 && strlen($title) > 1;
+        $description = strlen($description) < 500 && strlen($description) > 1;
+        $nameValid = strlen($title) < 50 && strlen($title) > 1;
+        $nameValid = strlen($title) < 50 && strlen($title) > 1;
+        $nameValid = strlen($title) < 50 && strlen($title) > 1;
+        $nameValid = strlen($title) < 50 && strlen($title) > 1;
+        $nameValid = strlen($title) < 50 && strlen($title) > 1;
+
+        $mailValid = filter_var($mail, FILTER_VALIDATE_EMAIL);
+
+        $phoneValid = strlen($phone) <= 20 && strlen($phone) >= 10;
+
+
     }
 }
