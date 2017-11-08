@@ -75,11 +75,20 @@ class inseratModel
 
     public function loadInserateById($id)
     {
-        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.description, inserat.email, inserat.phone FROM inserat where inserat.id = '$id'";
+        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.description, inserat.email, inserat.phone FROM inserat where inserat.id = '$id' and is_active = 1";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
 
         return $stmt->fetch();
 
+    }
+
+    public function loadInserateTotal()
+    {
+        $sql = "SELECT count(id) as 'count' FROM inserat where is_active = 1";
+        $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
+        $stmt->execute();
+
+        return $stmt->fetch();
     }
 }

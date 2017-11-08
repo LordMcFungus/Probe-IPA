@@ -51,9 +51,14 @@ function openInseratForm() {
 
 function loadInserate() {
 
+    var currentPage = sessionStorage.getItem("CurrentPage");
+
+    var dataString = 'CurrentPage='+currentPage;
+
     $.ajax({
         type: "GET",
         url: "view/allInserateView.php",
+        data: dataString,
         cache: false,
         success: function(data){
 

@@ -8,9 +8,19 @@
 require_once '../inserat/InseratController.php';
 
 
+$currentPage = filter_input(INPUT_GET, 'CurrentPage', FILTER_SANITIZE_NUMBER_INT) ?? 1;
+
 $controller = new InseratController();
 
-$inserate = $controller->showInserate(1);
+$maxPages = $controller->getNumberOfInserates();
+
+$inserate = $controller->showInserate($currentPage);
+
+$buttons = "";
+
+$buttons = $currentPage == 1 ? "" : "<div> <a class='navigationButton' onclick='previousPage'>Vorherige Seite</a></div>";
+$buttons = $currentPage == $maxPages ? $buttons."" : $buttons."<div> <a class='navigationButton' onclick='nextPage'>Nächste Seite</a></div>";
+
 
 echo "    <div >
             <h1>Inserate</h1>
@@ -18,4 +28,4 @@ echo "    <div >
           <div id=\"inserateContainer\"/>
             $inserate
           </div>
-          <div><a>Vorherige Seite</a><a>Nächste Seite</a></div>";
+          <div> $buttons</div>";
