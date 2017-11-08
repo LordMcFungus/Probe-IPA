@@ -33,14 +33,16 @@ class InseratController
 
     public function showInserate($page)
     {
-        $page = $page * 10 - 10;
+        $page = (int)($page * 10) - 10;
         $inserate = $this->model->loadInserate($page);
         return $inserate;
     }
 
     public function getNumberOfInserates()
     {
-        $numberOfInserates = (int)$this->model->loadInserateTotal();
+        $result = $this->model->loadInserateTotal();
+
+        $numberOfInserates = $result['count'];
 
         $numberOfPages = $numberOfInserates % 10 >= 0 ?  ($numberOfInserates / 10) + 1 : $numberOfInserates / 10;
 

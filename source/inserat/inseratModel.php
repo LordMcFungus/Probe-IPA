@@ -43,12 +43,11 @@ class inseratModel
         }
     }
 
-    public function loadInserate($start)
+    public function loadInserate(int $start)
     {
-        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.id FROM inserat ORDER BY inserat.date LIMIT 0,10";
+        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.id FROM inserat ORDER BY inserat.date LIMIT $start,10";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
-
 
         $echobolo = "";
 

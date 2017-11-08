@@ -2,8 +2,6 @@
  * Created by Alain on 03.11.2017.
  */
 
-var currentPage = 1;
-
 function createInserat() {
     var title=$("#Title").val();
     var description=$("#Description").val();
@@ -47,6 +45,18 @@ function openInseratForm() {
             alert(error);
         }
     });
+}
+
+function nextPage() {
+    var currentPage = sessionStorage.getItem("CurrentPage");
+    sessionStorage.setItem("CurrentPage", parseInt(currentPage) + 1);
+    loadInserate();
+}
+
+function previousPage() {
+    var currentPage = sessionStorage.getItem("CurrentPage");
+    sessionStorage.setItem("CurrentPage", parseInt(currentPage) - 1);
+    loadInserate();
 }
 
 function loadInserate() {
