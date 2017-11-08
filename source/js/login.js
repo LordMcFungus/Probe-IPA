@@ -17,3 +17,45 @@ function showLogin() {
             }
         });
 }
+
+function login() {
+    var username=$("#Username").val();
+    var password=$("#Password").val();
+
+    var dataString = 'Username='+username+ '&Password='+password;
+
+    $.ajax({
+        type: "GET",
+        url: "login/loginInput.php",
+        data: dataString,
+        cache: false,
+        success: function(data){
+
+            if(data == "Success"){
+                loadContent();
+            }
+            else {
+                alert(data);
+            }
+        },
+        error: function (request, status, error) {
+
+
+        }
+    });
+}
+
+function logout() {
+    $.ajax({
+        type: "GET",
+        url: 'login/logout.php',
+        cache: false,
+        success: function(data){
+            loadContent();
+        },
+        error: function (request, status, error) {
+            //Shake animation effect.
+            alert(error);
+        }
+    });
+}

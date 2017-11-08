@@ -14,7 +14,7 @@ echo '<form id="loginform" onsubmit="login(); return false;">
                 <label for="Password" class="LoginLabel">Passwort</label> <br />
                 <input type="password" id="Password" name="Password" class="LoginInput" required="required"> <br />
 
-                <input type="reset" onclick="hideLogin()" class="LoginButton" id="ResetLogin" value="Abbrechen">
-                <input type="submit" name="Registrieren" class="LoginButton" id="SubmitLogin" value="Einloggen">
+                <input type="reset"  class="LoginButton" id="ResetLogin" value="Abbrechen">
+                <input type="submit" class="LoginButton" id="SubmitLogin" value="Einloggen">
 
             </form>';

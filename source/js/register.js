@@ -30,20 +30,15 @@ function register() {
 
     var dataString = 'Username='+username+'&Name='+name+'&Surname='+surname+'&Mail='+mail+'&Phone='+phone+'&Password='+password+'&RepPassword='+repPassword;
 
-    alert(dataString);
-
     $.ajax({
         type: "GET",
         url: "input/registerInput.php",
         data: dataString,
         cache: false,
         success: function(data){
-          alert(data);
-
-            loadRegisteredPage();
 
             if(data == "Success"){
-                loadRegisteredPage();
+                loadContent();
             }
         },
         error: function (request, status, error) {

@@ -44,9 +44,6 @@ class userModel
         return true;
     }
 
-    public function getUserByUsername() {
-
-    }
 
     public function isUserNotExisting(string $username) {
         $sql 	= "SELECT id FROM user WHERE username ='$username'";
@@ -59,6 +56,22 @@ class userModel
         }
 
         return false;
+
+    }
+
+    public function loadUserByUsername($username)
+    {
+        $sql 	= "SELECT id FROM user WHERE username ='$username'";
+        $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
+        $stmt->execute();
+
+        if ($stmt->rowCount() > 0) {
+            return null;
+        } else {
+            return $stmt;
+        }
+
+
 
     }
 }
