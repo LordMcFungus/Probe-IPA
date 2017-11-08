@@ -17,18 +17,21 @@
     <script src="js/Jquery3.2.1.js"></script>
 </head>
 <body onload="loadContent()">
-    <header>
-        <div id="headerContent">
-            <div id="headerButtonContainer">
-                <a onclick="showLogin()" class="headerButton" id="loginButton">Login</a>
-                <a onclick="showRegister()" class="headerButton" id="registerButton">Registrieren</a>
+    <div id="container">
+        <header>
+            <div id="headerContent" >
+                <div id="headerButtonContainer">
+                    <a onclick="showLogin()" class="headerButton" id="loginButton">Login</a>
+                    <a onclick="showRegister()" class="headerButton" id="registerButton" >Registrieren</a>
+                </div>
+                <div class="floatClear"></div>
             </div>
-            <div class="floatClear"></div>
-        </div>
-    </header>
+        </header>
 
-    <main id="mainContent">
+        <main id="mainContent">
 
-    </main>
+        </main>
+    </div>
+
 </body>
 </html>

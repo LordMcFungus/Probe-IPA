@@ -59,9 +59,9 @@ class inseratModel
             $location = $row['location'];
             $id = $row['id'];
 
-            $echobolo = $echobolo."<div>
+            $echobolo = $echobolo."<div class='inseratPreview'>
                                <a href='inserat/inserat.php?id=$id'>
-                               <p>$name</p>
+                               <h2>$name</h2>
                                <p>$type</p>
                                <p>$location</p></a>
                           </div>";

@@ -17,5 +17,7 @@ function loadContent(){
         }
     });
 
+    sessionStorage.setItem("CurrentPage", 1);
+    sessionStorage.getItem("CurrentPage");
     loadInserate();
 }

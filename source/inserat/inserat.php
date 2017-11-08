@@ -33,7 +33,7 @@ $data = $model->loadInserateById($id);
 <body onload="loadContent()">
     <header>
         <div id="headerContent">
-            <?php require_once '../view/headerView.php'; ?>
+            <a class="headerButton" id="loginButton" href="../index.php">Zurück</a>
             <div class="floatClear"></div>
         </div>
     </header>

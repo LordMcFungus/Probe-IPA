@@ -19,13 +19,15 @@ if($user) {
             
         </div>
         <div id=\"headerButtonContainer\">
+           <a onclick=\"loadContent()\" class=\"headerButton\" id=\"myInserateButton\">Start</a>
            <a onclick=\"showMyInserate()\" class=\"headerButton\" id=\"myInserateButton\">Meine Inserate</a>
            <a onclick=\"openInseratForm()\" class=\"headerButton\" id=\"makeInseratButton\">Inserat erfassen</a>
            <a onclick=\"logout()\" class=\"headerButton\" id=\"logoutButton\">Logout</a>
         </div>
-        <div class=\"floatClear\"></div>'";
+        <div class=\"floatClear\"></div>";
 } else {
-    echo ' <div id="headerButtonContainer">
+    echo '<div id="headerButtonContainer">
+           <a onclick="loadContent()" class="headerButton" id="myInserateButton">Start</a>
            <a onclick="showLogin()" class="headerButton" id="loginButton">Login</a>
            <a onclick="showRegister()" class="headerButton" id="registerButton">Registrieren</a>
         </div>

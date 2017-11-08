@@ -12,9 +12,10 @@ $controller = new InseratController();
 
 $inserate = $controller->showInserate(1);
 
-echo "<div>
-        <h1>Inserate</h1>
-      </div>
-      <div id=\"inserateContainer\"/>
-        $inserate
-      </div>";
+echo "    <div >
+            <h1>Inserate</h1>
+          </div>
+          <div id=\"inserateContainer\"/>
+            $inserate
+          </div>
+          <div><a>Vorherige Seite</a><a>Nächste Seite</a></div>";

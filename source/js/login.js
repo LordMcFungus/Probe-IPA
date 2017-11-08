@@ -35,7 +35,6 @@ function login() {
                 loadContent();
             }
             else {
-                alert(data);
             }
         },
         error: function (request, status, error) {

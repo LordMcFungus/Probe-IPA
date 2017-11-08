@@ -41,7 +41,6 @@ function register() {
                 loadContent();
 
             }
-            alert(data);
         },
         error: function (request, status, error) {
             //Shake animation effect.

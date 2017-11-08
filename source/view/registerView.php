@@ -36,8 +36,8 @@ echo '<div id="LoginContent">
                title="Mindestens 8 Zeichen lang. Inklusive Sonderzeichen, Grossbuchstaben und Zahlen." type="password"
                id="RepPassword" name="RepPassword" class="RegisterInput" > <br/>
 
-        <input type="reset" name="Abbrechen" class="RegisterButton" id="Reset" value="Abbrechen">
-        <input type="submit" name="Registrieren" class="RegisterButton" id="Submit" value="Registrieren">
+        <input type="reset" name="Abbrechen" class="ResetButton" id="Reset" value="Abbrechen">
+        <input type="submit" name="Registrieren" class="SubmitButton" id="Submit" value="Registrieren">
 
     </form>
 </div>';
