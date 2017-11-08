@@ -17,7 +17,7 @@ class validator
 
         $usernameValid = strlen($username) < 40 && strlen($username) > 1;
 
-        $usernameUnique = $model->isUserNotExisting($username);
+        $usernameUnique = $model->isUserExisting($username);
 
         $passwordValid = true; //$password == $repeatPassword && preg_match($passwordRegularExpression, $password);
 
@@ -43,16 +43,22 @@ class validator
     public function inseratInputValid(string $title, string $description, string $mail, string $phone, string $place, string $type)
     {
         $titleValid = strlen($title) < 50 && strlen($title) > 1;
-        $description = strlen($description) < 500 && strlen($description) > 1;
-        $nameValid = strlen($title) < 50 && strlen($title) > 1;
-        $nameValid = strlen($title) < 50 && strlen($title) > 1;
-        $nameValid = strlen($title) < 50 && strlen($title) > 1;
-        $nameValid = strlen($title) < 50 && strlen($title) > 1;
-        $nameValid = strlen($title) < 50 && strlen($title) > 1;
-
+        $descriptionValid = strlen($description) < 500 && strlen($description) > 1;
         $mailValid = filter_var($mail, FILTER_VALIDATE_EMAIL);
-
         $phoneValid = strlen($phone) <= 20 && strlen($phone) >= 10;
+        $placeValid = strlen($place) < 50 && strlen($place) > 1;
+        $typeValid = strlen($type) < 45 && strlen($type) > 1;
+
+
+        $validationResults = array('Title' => $titleValid, 'Description' =>$descriptionValid, 'mail' => $mailValid != "", 'Phone' => $phoneValid, 'Place' => $placeValid, 'Type' => $typeValid);
+
+        foreach ($validationResults as $key => $value) {
+            if(!$value) {
+                echo $key;
+                return false;
+            }
+        }
+        return true;
 
 
     }

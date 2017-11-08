@@ -16,6 +16,11 @@ $place = filter_input(INPUT_GET, 'Place', FILTER_SANITIZE_STRING) ?? "";
 $type = filter_input(INPUT_GET, 'Type', FILTER_SANITIZE_STRING) ?? "";
 
 
-$controller = new InseratController();
+$mySession = mySession::getInstance();
+if($mySession->getCurrentUser()) {
+    $controller = new InseratController();
 
-$controller->createInserat($title, $description, $mail, $phone, $place, $type);
+    $controller->createInserat($title, $description, $mail, $phone, $place, $type);
+} else {
+    echo 'not authenticated';
+}

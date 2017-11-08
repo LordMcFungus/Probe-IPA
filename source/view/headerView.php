@@ -16,7 +16,7 @@ $user = $currentSession->getCurrentUser();
 if($user) {
     echo "
         <div>
-            <H1>Hallo $user</H1>
+            
         </div>
         <div id=\"headerButtonContainer\">
            <a onclick=\"showMyInserate()\" class=\"headerButton\" id=\"myInserateButton\">Meine Inserate</a>

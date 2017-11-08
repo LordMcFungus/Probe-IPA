@@ -24,7 +24,7 @@ class LoginController
 
             if ($passwordCorrect) {
 
-                $this->customSession->setCurrentUser($user['username']);
+                $this->customSession->setCurrentUser($user);
                 echo 'Success';
                 return;
             }

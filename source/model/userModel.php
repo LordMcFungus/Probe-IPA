@@ -36,7 +36,7 @@ class userModel
 
         //$user = new user($name, $surname, $username, $mail, $phone);
 
-        $user = $username;
+        $user = $this->loadUserByUsername($username);
 
         $this->mySession->setCurrentUser($user);
 
@@ -45,17 +45,19 @@ class userModel
     }
 
 
-    public function isUserNotExisting(string $username) {
-        $sql 	= "SELECT id FROM user WHERE username ='$username'";
+    public function isUserExisting(string $username) {
+     /*   $sql 	= "SELECT id FROM user WHERE username ='$username'";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
+*/
 
-        if ( $stmt->rowCount() >=1)
+        /*
+        if ( $stmt->() >=1)
         {
             return true;
         }
-
-        return false;
+*/
+        return true;
 
     }
 
@@ -65,7 +67,7 @@ class userModel
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
 
-        if ($stmt->rowCount() < 0) {
+        if ($stmt->rowCount() <= 0) {
            echo 'Gaggi';
             return null;
         } else {

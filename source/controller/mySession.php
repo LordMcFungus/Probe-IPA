@@ -30,7 +30,7 @@ class mySession
     /**
      * @param $user User to be stored in the sessionfield 'user'
      */
-    public function setCurrentUser(string $user)
+    public function setCurrentUser($user)
     {
         $_SESSION['CurrentUser'] = $user;
     }
