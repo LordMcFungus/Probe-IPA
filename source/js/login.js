@@ -2,6 +2,10 @@
  * Created by Alain on 03.11.2017.
  */
 
+/**
+ * Shows Loginformular for the User to login
+ * Called when Loginbutton is clicked
+ */
 function showLogin() {
         $.ajax({
             type: "GET",
@@ -18,6 +22,10 @@ function showLogin() {
         });
 }
 
+/**
+ * sends inputed data to server for further validation
+ * Invoked by Loginbutton in Loginform
+ */
 function login() {
     var username=$("#Username").val();
     var password=$("#Password").val();
@@ -43,7 +51,9 @@ function login() {
         }
     });
 }
-
+/**
+ * Sends request to Server for the User to get logged out
+ */
 function logout() {
     $.ajax({
         type: "GET",

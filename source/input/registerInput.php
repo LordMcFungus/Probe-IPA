@@ -8,6 +8,10 @@
 
 require_once "../controller/registerController.php";
 
+/**
+ * Saintizes user Inputs, andgive it to the regsiterController
+ */
+
 $username = filter_input(INPUT_GET, 'Username', FILTER_SANITIZE_STRING) ?? "";
 $name = filter_input(INPUT_GET, 'Name', FILTER_SANITIZE_STRING) ?? "";
 $surname = filter_input(INPUT_GET, 'Surname', FILTER_SANITIZE_STRING) ?? "";

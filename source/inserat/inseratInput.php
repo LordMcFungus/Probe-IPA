@@ -8,6 +8,10 @@
 
 require_once 'InseratController.php';
 
+/**
+ * Sanitizes input from new Inserat form and passing it formward to controller
+ */
+
 $title = filter_input(INPUT_GET, 'Title', FILTER_SANITIZE_STRING) ?? "";
 $description = filter_input(INPUT_GET, 'Description', FILTER_SANITIZE_STRING) ?? "";
 $mail = filter_input(INPUT_GET, 'Mail', FILTER_SANITIZE_EMAIL) ?? "";

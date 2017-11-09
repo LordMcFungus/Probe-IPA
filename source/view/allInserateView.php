@@ -12,7 +12,7 @@ $currentPage = (int)filter_input(INPUT_GET, 'CurrentPage', FILTER_SANITIZE_NUMBE
 
 $controller = new InseratController();
 
-$maxPages = $controller->getNumberOfInserates();
+$maxPages = $controller->getNumberOfPages();
 
 var_dump($currentPage);
 

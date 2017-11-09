@@ -2,6 +2,9 @@
  * Created by Alain on 03.11.2017.
  */
 
+/**
+ * Loads pagecontent on first start or opening the mainpage
+ */
 function loadContent(){
     $.ajax({
         type: "GET",

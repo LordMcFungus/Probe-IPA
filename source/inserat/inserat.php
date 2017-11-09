@@ -22,10 +22,8 @@ $data = $model->loadInserateById($id);
     <meta charset="UTF-8">
     <title>Inserator</title>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/header.js"></script>
     <script src="inserat.js"></script>
     <script src="../js/login.js"></script>
-    <script src="../js/main.js"></script>
     <script src="../js/register.js"></script>
     <script src="../js/load.js"></script>
     <script src="../js/Jquery3.2.1.js"></script>

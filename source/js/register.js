@@ -2,6 +2,10 @@
  * Created by Alain on 03.11.2017.
  */
 
+/**
+ * Sow register form
+ * Invoked by RegsiterButton in header
+ */
 function showRegister() {
     $.ajax({
         type: "GET",
@@ -18,6 +22,10 @@ function showRegister() {
     });
 }
 
+/**
+ * Sends inputed registerdata to server for further validation
+ * invoked by registerbutton in registerform
+ */
 function register() {
 
     var username=$("#RegisterUsername").val();

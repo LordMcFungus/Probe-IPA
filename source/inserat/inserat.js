@@ -2,6 +2,9 @@
  * Created by Alain on 03.11.2017.
  */
 
+/**
+ * Calls php method for creating new Inserat
+ */
 function createInserat() {
     var title=$("#Title").val();
     var description=$("#Description").val();
@@ -22,6 +25,8 @@ function createInserat() {
 
             if(data == "Success"){
                 alert('Success');
+            } else {
+                alert("Fehlgeschlagen");
             }
         },
         error: function (request, status, error) {
@@ -31,6 +36,9 @@ function createInserat() {
     });
 }
 
+/**
+ *  Opens php method for showing the new Inserat Formular
+ */
 function openInseratForm() {
     $.ajax({
         type: "GET",
@@ -47,18 +55,27 @@ function openInseratForm() {
     });
 }
 
+/**
+ * Gos to next page in the Mainpage
+ */
 function nextPage() {
     var currentPage = sessionStorage.getItem("CurrentPage");
     sessionStorage.setItem("CurrentPage", parseInt(currentPage) + 1);
     loadInserate();
 }
 
+/**
+ * Go to previous page in the Mainpage
+ */
 function previousPage() {
     var currentPage = sessionStorage.getItem("CurrentPage");
     sessionStorage.setItem("CurrentPage", parseInt(currentPage) - 1);
     loadInserate();
 }
 
+/**
+ * Loads the Inserate for one page from the Server
+ */
 function loadInserate() {
 
     var currentPage = sessionStorage.getItem("CurrentPage");

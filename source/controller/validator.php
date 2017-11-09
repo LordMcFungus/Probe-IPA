@@ -8,8 +8,23 @@
  */
 require_once "../model/userModel.php";
 
+/**
+ * Class validator
+ * Class to manage the Input Validators
+ */
 class validator
 {
+    /**
+     * Validates the inputs used for register
+     * @param string $username
+     * @param string $password
+     * @param string $repeatPassword
+     * @param string $surname
+     * @param string $name
+     * @param string $mail
+     * @param string $phone
+     * @return bool
+     */
     public function registerInputValid(string $username, string $password, string $repeatPassword, string $surname, string $name, string $mail, string $phone)
     {
         $model = new userModel();
@@ -35,11 +50,22 @@ class validator
             if(!$value) {
                 echo $key;
                 return false;
+                //TODO: manage the faulty input
             }
         }
         return true;
     }
 
+    /**
+     * Validates the Input used for creating a new Inserat
+     * @param string $title
+     * @param string $description
+     * @param string $mail
+     * @param string $phone
+     * @param string $place
+     * @param string $type
+     * @return bool
+     */
     public function inseratInputValid(string $title, string $description, string $mail, string $phone, string $place, string $type)
     {
         $titleValid = strlen($title) < 50 && strlen($title) > 1;
