@@ -43,6 +43,9 @@ function login() {
                 loadContent();
             }
             else {
+                errorPrint = "<p>Login Fehlgeschlagen</p>";
+                $('#loginErrorContainer').empty();
+                $('#loginErrorContainer').append(errorPrint);
             }
         },
         error: function (request, status, error) {

@@ -17,4 +17,5 @@ echo '<form id="loginform" onsubmit="login(); return false;">
                 <input type="reset"  class="ResetButton" id="ResetLogin" value="Abbrechen">
                 <input type="submit" class="SubmitButton" id="SubmitLogin" value="Einloggen">
 
-            </form>';
+            </form>
+            <div id="loginErrorContainer"></div>';

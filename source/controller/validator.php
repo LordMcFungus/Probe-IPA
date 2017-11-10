@@ -34,7 +34,7 @@ class validator
 
         $usernameUnique = $model->isUserExisting($username);
 
-        $passwordValid = true; //$password == $repeatPassword && preg_match($passwordRegularExpression, $password);
+        $passwordValid = $password == $repeatPassword; //&& preg_match($passwordRegularExpression, $password);
 
         $surnameValid = strlen($surname) < 40 && strlen($surname) > 1;
 

@@ -7,7 +7,7 @@
  * Time: 09:41
  */
 require_once "../model/userModel.php";
-require_once "validator.php";
+require_once "../controller/validator.php";
 
 /**
  * Class registerController

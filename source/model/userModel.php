@@ -29,7 +29,7 @@ class userModel
             $sql = "INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('$surname', '$name', '$username', '$mail', '$phone', '$hashedpassword')";
             $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
             $stmt->execute();
-        } catch (mysqli_sql_exception $e) {
+        } catch (PDOException $e) {
             echo "ERROR";
             return false;
         }

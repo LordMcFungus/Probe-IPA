@@ -14,8 +14,6 @@ $controller = new InseratController();
 
 $maxPages = $controller->getNumberOfPages();
 
-var_dump($currentPage);
-
 $inserate = $controller->showInserate($currentPage);
 
 $buttons = "";

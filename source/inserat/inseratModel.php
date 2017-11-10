@@ -59,6 +59,7 @@ class inseratModel
             echo "ERROR";
             return false;
         }
+        echo "Success";
     }
 
     /**
@@ -68,11 +69,11 @@ class inseratModel
      */
     public function loadInserate(int $start)
     {
-        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.id FROM inserat ORDER BY inserat.date LIMIT $start,10";
+        $sql = "SELECT inserat.name, inserat.type, inserat.location, inserat.id FROM inserat ORDER BY inserat.date DESC LIMIT $start,10";
         $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
         $stmt->execute();
 
-        $echobolo = "";
+        $outputString = "";
 
         while ($row = $stmt->fetch())
         {
@@ -81,7 +82,7 @@ class inseratModel
             $location = $row['location'];
             $id = $row['id'];
 
-            $echobolo = $echobolo."<div class='inseratPreview'>
+            $outputString = $outputString."<div class='inseratPreview'>
                                <a href='inserat/inserat.php?id=$id'>
                                <h2>$name</h2>
                                <p>$type</p>
@@ -89,7 +90,7 @@ class inseratModel
                           </div>";
         }
 
-        return $echobolo;
+        return $outputString;
 
 
 

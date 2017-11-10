@@ -24,7 +24,8 @@ function createInserat() {
         success: function(data){
 
             if(data == "Success"){
-                alert('Success');
+                alert('Inserat wurde erstellt');
+                loadContent();
             } else {
                 alert("Fehlgeschlagen");
             }

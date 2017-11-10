@@ -6,7 +6,7 @@
  * Time: 09:43
  */
 
-require_once "../controller/registerController.php";
+require_once "registerController.php";
 
 /**
  * Saintizes user Inputs, andgive it to the regsiterController

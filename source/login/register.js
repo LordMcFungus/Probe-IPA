@@ -40,7 +40,7 @@ function register() {
 
     $.ajax({
         type: "GET",
-        url: "input/registerInput.php",
+        url: "login/registerInput.php",
         data: dataString,
         cache: false,
         success: function(data){
