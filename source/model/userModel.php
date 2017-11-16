@@ -7,7 +7,6 @@
  * Time: 08:48
  */
 require_once "database.php";
-require_once "user.php";
 require_once "../controller/mySession.php";
 
 class userModel
@@ -26,10 +25,14 @@ class userModel
 
         try
         {
+            $this->connection->beginTransaction();
             $sql = "INSERT INTO `inserator`.`user` (`first_name`, `name`, `username`, `email`, `phone`, `pwd`) VALUES ('$surname', '$name', '$username', '$mail', '$phone', '$hashedpassword')";
             $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
             $stmt->execute();
+            $this->connection->commit();
+
         } catch (PDOException $e) {
+            $this->connection->rollBack();
             echo "ERROR";
             return false;
         }

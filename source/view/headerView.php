@@ -6,7 +6,6 @@
  * Time: 09:31
  */
 
-require_once "../model/user.php";
 require_once "../controller/mySession.php";
 
 $currentSession = mySession::getInstance();

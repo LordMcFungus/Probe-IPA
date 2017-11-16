@@ -52,10 +52,13 @@ class inseratModel
 
         try
         {
+            $this->connection->beginTransaction();
             $sql = "INSERT INTO `inserator`.`inserat` (`name`, `type`, `description`, `location`, `email`, `phone`, `date`, `is_active`, `user_id`) VALUES ('$title', '$type', '$description', '$place', '$mail', '$phone', '$date', '$isActive', '$userId')";
             $stmt 	= $this->connection->prepare($sql); // Prevent MySQl injection. $stmt means statement
             $stmt->execute();
+            $this->connection->commit();
         } catch (mysqli_sql_exception $e) {
+            $this->connection->rollBack();
             echo "ERROR";
             return false;
         }
